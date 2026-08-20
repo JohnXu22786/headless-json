@@ -1,0 +1,12 @@
+{"seq":0,"time":1753000001000,"kind":"turn_start","turn":0}
+{"seq":1,"time":1753000001100,"kind":"user_message","turn":0,"step":0,"text":"Refactor the validation in src/options.ts and update the tests in test/options.test.js (checklist in README.md).","reasoning":"","blocks":{"text":1,"reasoning":0,"image":0,"other":0}}
+{"seq":2,"time":1753000002000,"kind":"step_start","turn":0,"step":0}
+{"seq":3,"time":1753000002050,"kind":"request_context","provider":"deepseek","model":"deepseek-chat","context_window":64000}
+{"seq":6,"time":1753000002200,"kind":"assistant_message","turn":0,"step":0,"provider":"deepseek","model":"deepseek-chat","latency_ms":1100,"usage":{"input":412,"output":37,"cache_read":0,"cache_write":0,"reasoning":0},"text":"I'll start by reviewing the current validation code.\nLet me read the file first.","reasoning":"","blocks":{"text":1,"reasoning":0,"image":0,"other":0},"stream":{"chunk_count":2,"first_chunk_at":1753000002100,"last_chunk_at":1753000002150}}
+{"seq":7,"time":1753000003000,"kind":"tool_call","turn":0,"step":0,"call_id":"call_01","tool":"read","args_mode":"truncate","args":null,"args_summary":"{\"path\":\"src/options.ts\"}","latency_ms":500,"undelivered":false}
+{"seq":8,"time":1753000003500,"kind":"tool_result","turn":0,"step":0,"call_id":"call_01","tool":"read","status":"success","latency_ms":500,"text":"// options.ts (128 lines)\nexport interface Options { ... }","blocks":{"text":1,"reasoning":0,"image":0,"other":0},"error":null}
+{"seq":9,"time":1753000004000,"kind":"tool_call","turn":0,"step":0,"call_id":"call_02","tool":"write","args_mode":"truncate","args":null,"args_summary":"{\"path\":\"src/options.ts\",\"content\":\"<updated source>\"}","latency_ms":800,"undelivered":false}
+{"seq":10,"time":1753000004800,"kind":"tool_result","turn":0,"step":0,"call_id":"call_02","tool":"write","status":"success","latency_ms":800,"text":"Updated src/options.ts and test/options.test.js (3 files changed).","blocks":{"text":1,"reasoning":0,"image":0,"other":0},"error":null}
+{"seq":11,"time":1753000004900,"kind":"step_end","turn":0,"step":0,"latency_ms":2900}
+{"seq":12,"time":1753000005000,"kind":"turn_end","turn":0,"reason":"completed","error":null,"cause":null,"latency_ms":4000,"complete":true}
+{"kind":"session_end","session_id":"session-sample-8f3d2a","generated_at":1753000005000,"outcome":{"status":"success","exit_code":0,"reason":"completed"},"stats":{"duration_ms":4000,"turns":1,"steps":1,"tool_calls":2,"tool_errors":0}}

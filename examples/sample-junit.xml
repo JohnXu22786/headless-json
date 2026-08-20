@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="dsh-headless-json" tests="5" failures="0" errors="0" skipped="0" time="4.000" timestamp="2025-07-20T08:26:45.000Z">
+  <testsuite name="session-sample-8f3d2a" tests="5" failures="0" errors="0" skipped="0" time="4.000">
+    <properties>
+      <property name="plugin" value="dsh-headless-json"/>
+      <property name="plugin.version" value="0.1.0"/>
+      <property name="schema_version" value="1"/>
+      <property name="session_id" value="session-sample-8f3d2a"/>
+      <property name="cwd" value="."/>
+      <property name="status" value="success"/>
+      <property name="exit_code" value="0"/>
+      <property name="reason" value="completed"/>
+    </properties>
+    <testcase name="run" classname="outcome" time="4.000">
+    </testcase>
+    <testcase name="turn-0" classname="session-8f3d2a.turn" time="4.000">
+    </testcase>
+    <testcase name="step-0" classname="session-8f3d2a.turn-0" time="2.900">
+    </testcase>
+    <testcase name="tool:read" classname="session-8f3d2a.turn-0.step-0" time="0.500">
+      <system-out>
+        // options.ts (128 lines)
+export interface Options { ... }
+      </system-out>
+    </testcase>
+    <testcase name="tool:write" classname="session-8f3d2a.turn-0.step-0" time="0.800">
+      <system-out>
+        Updated src/options.ts and test/options.test.js (3 files changed).
+      </system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

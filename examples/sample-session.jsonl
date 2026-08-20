@@ -1,0 +1,14 @@
+{"type":"session","version":0,"id":"session-sample-8f3d2a","cwd":"<project root>","createdAt":1753000000000,"agentPreset":"minimal"}
+{"type":"turn/start","seq":0,"time":1753000001000,"data":{"turn":0}}
+{"type":"user/message","seq":1,"time":1753000001100,"data":{"content":[{"type":"text","text":"Refactor the validation in src/options.ts and update the tests in test/options.test.js (checklist in README.md)."}],"source":{"kind":"user"}}}
+{"type":"step/start","seq":2,"time":1753000002000,"data":{"turn":0,"step":0}}
+{"type":"request/context","seq":3,"time":1753000002050,"data":{"provider":"deepseek","model":"deepseek-chat","contextWindow":64000}}
+{"type":"assistant/chunk","seq":4,"time":1753000002100,"data":{"turn":0,"step":0,"chunk":{"type":"text-delta","index":0,"text":"I'll start by reviewing the current validation code."}}}
+{"type":"assistant/chunk","seq":5,"time":1753000002150,"data":{"turn":0,"step":0,"chunk":{"type":"text-delta","index":0,"text":"\nLet me read the file first."}}}
+{"type":"assistant/message","seq":6,"time":1753000002200,"data":{"turn":0,"step":0,"message":{"content":[{"type":"text","text":"I'll start by reviewing the current validation code.\nLet me read the file first."}],"source":{"kind":"model","provider":"deepseek","model":"deepseek-chat"}},"usage":{"inputTokens":412,"outputTokens":37,"cacheReadTokens":0,"cacheWriteTokens":0}}}
+{"type":"tool/call","seq":7,"time":1753000003000,"data":{"turn":0,"step":0,"callId":"call_01","name":"read","arguments":"{\"path\":\"src/options.ts\"}"}}
+{"type":"tool/result","seq":8,"time":1753000003500,"data":{"turn":0,"step":0,"message":{"role":"user","content":[{"type":"tool-result","toolCallId":"call_01","content":[{"type":"text","text":"// options.ts (128 lines)\nexport interface Options { ... }"}],"isError":false}],"source":{"kind":"tool","callId":"call_01"}}}}
+{"type":"tool/call","seq":9,"time":1753000004000,"data":{"turn":0,"step":0,"callId":"call_02","name":"write","arguments":"{\"path\":\"src/options.ts\",\"content\":\"<updated source>\"}"}}
+{"type":"tool/result","seq":10,"time":1753000004800,"data":{"turn":0,"step":0,"message":{"role":"user","content":[{"type":"tool-result","toolCallId":"call_02","content":[{"type":"text","text":"Updated src/options.ts and test/options.test.js (3 files changed)."}],"isError":false}],"source":{"kind":"tool","callId":"call_02"}}}}
+{"type":"step/end","seq":11,"time":1753000004900,"data":{"turn":0,"step":0}}
+{"type":"turn/end","seq":12,"time":1753000005000,"data":{"turn":0,"reason":{"kind":"completed"}}}

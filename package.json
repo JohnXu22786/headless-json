@@ -1,0 +1,59 @@
+{
+  "name": "dsh-headless-json",
+  "version": "0.1.0",
+  "description": "Structured, machine-readable CI output for DeepSeek Harness (dsh): session event capture with JSON/NDJSON reports, JUnit XML, semantic exit codes, artifact collection and privacy redaction. Ships as a dsh profile bundle and a standalone CLI.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-headless-json": "./bin/dsh-headless-json.js"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "cordis.patch.yml",
+    "examples",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/options.test.js test/capture.test.js test/redact.test.js test/exit-code.test.js test/serialize.test.js test/junit.test.js test/manager.test.js test/cli.test.js",
+    "test:only": "node --test test/options.test.js test/capture.test.js test/redact.test.js test/exit-code.test.js test/serialize.test.js test/junit.test.js test/manager.test.js test/cli.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "ci",
+    "headless",
+    "junit",
+    "ndjson",
+    "plugin",
+    "bundle"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+# dsh-headless-json bundle patch.
+#
+# Mounts the structured CI output capture plugin as an additional layer on top
+# of any profile that composes the `sessions` service (for example the shipped
+# `headless` profile). The plugin needs no configuration by default; all of its
+# behavior can be tuned through the `config` block below (see README →
+# "Configuration") or at runtime through the `set_options` tool.
+#
+# Compose after the base/headless bundles, e.g.:
+#   dsh --profile headless "run the tests"
+# produces dsh-output/report.json, dsh-output/junit.xml and (when enabled)
+# the live NDJSON event stream.
+- insert:
+    - id: headless-json
+      name: dsh-headless-json
+      # The module itself hard-depends only on `sessions`; `tools` is optional
+      # (guarded via ctx.get) so this bundle also mounts on profiles that
+      # compose no tools service.
+      inject: [sessions]
+      config: {}
