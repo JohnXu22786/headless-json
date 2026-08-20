@@ -230,6 +230,23 @@ test('ndjson output can be re-rendered as input', async () => {
   }
 });
 
+test('render --out creates parent directories for the target file', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'dsh-cli-'));
+  try {
+    const options = JSON.parse(JSON.stringify(DEFAULT_OPTIONS));
+    const report = buildFixture(options);
+    const file = join(dir, 'report.json');
+    writeFileSync(file, renderReportJson(report, options), 'utf8');
+    // the target directory does not exist yet
+    const outFile = join(dir, 'nested', 'deeper', 'out.ndjson');
+    const rendered = await run(dir, ['render', file, '--format', 'ndjson', '--out', outFile]);
+    assert.equal(rendered.code, 0);
+    assert.equal(readFileSync(outFile, 'utf8').split('\n').length > 0, true);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 test('a JSON array input containing a raw/derived mix is rejected', async () => {
   const dir = mkdtempSync(join(tmpdir(), 'dsh-cli-'));
   try {
