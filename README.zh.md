@@ -2,6 +2,8 @@
 
 面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)(`dsh`)的结构化、机器可读 CI 输出。
 
+> **English documentation: [README.md](README.md)**
+
 dsh 官方 `headless` 模式只打印最后一条助手文本并以 0/1 退出——适合快速冒烟,但对 CI 来说信息太薄。`dsh-headless-json` 是一个 profile bundle,把任意 dsh 会话变成真正的 CI 产物:
 
 - **事务级 JSON 报告**(会话元数据 + 每个结构化事件 + 结果 + 统计);
@@ -114,6 +116,12 @@ npm run build        # 或:npm test(构建 + 跑完整测试套件)
 
 ```bash
 dsh plugin --profile headless add /path/to/headless-json
+```
+
+或直接从本仓库安装:
+
+```bash
+dsh plugin --profile headless add github:JohnXu22786/headless-json
 ```
 
 或手动:在 profile 的 `package.json` 依赖中加上 `dsh-headless-json`,并加入有序的 `dsh.profile.bundles` 列表,然后在 profile 目录 `pnpm install`。dsh 下次运行时会把已安装的 bundle 与 `dsh.profile.bundles` 对账。

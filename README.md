@@ -1,6 +1,10 @@
 # dsh-headless-json
 
+[![CI](https://github.com/JohnXu22786/headless-json/actions/workflows/ci.yml/badge.svg)](https://github.com/JohnXu22786/headless-json/actions/workflows/ci.yml)
+
 Structured, machine-readable CI output for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
+
+> **中文文档：[README.zh.md](README.zh.md)**
 
 dsh's built-in `headless` mode prints the final assistant text and exits 0/1 —
 perfect for a quick smoke test, but thin for CI. `dsh-headless-json` is a
@@ -132,6 +136,12 @@ Using the CLI (forwards to pnpm):
 
 ```bash
 dsh plugin --profile headless add /path/to/headless-json
+```
+
+or straight from this repository:
+
+```bash
+dsh plugin --profile headless add github:JohnXu22786/headless-json
 ```
 
 or manually: add `dsh-headless-json` to the profile's `package.json`
