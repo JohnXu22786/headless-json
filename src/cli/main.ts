@@ -9,7 +9,8 @@
  * exit code for the run and exits the process with it — the CI glue.
  */
 
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
 
 import { DEFAULT_OPTIONS, applyDottedPath, parseScalar, type Options } from '../options.js';
 import { buildReport, buildReportFromSerialized, renderReportJson } from '../report.js';
@@ -190,6 +191,7 @@ async function runRender(
   }
 
   if (out !== null) {
+    await mkdir(dirname(resolve(out)), { recursive: true });
     await writeFile(out, output, 'utf8');
     return 0;
   }
