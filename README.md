@@ -3,7 +3,6 @@
 [![CI](https://github.com/JohnXu22786/headless-json/actions/workflows/ci.yml/badge.svg)](https://github.com/JohnXu22786/headless-json/actions/workflows/ci.yml)
 
 Structured, machine-readable CI output for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
-
 > **中文文档：[README.zh.md](README.zh.md)**
 
 dsh's built-in `headless` mode prints the final assistant text and exits 0/1 —
